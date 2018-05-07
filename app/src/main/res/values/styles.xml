@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="android:Theme.Black">
+
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+
+    </style>
+
+    <style name="GameTheme" parent="android:Theme.Black.NoTitleBar.Fullscreen">
+
+    </style>
+
+</resources>
