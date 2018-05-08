@@ -67,12 +67,20 @@ public class Constants {
 	public static final class Color {
 		static final float RGB_UPPER_BOUND = 255;
 		static final float[] WHITE_RGB = {255/RGB_UPPER_BOUND, 255/RGB_UPPER_BOUND, 255/RGB_UPPER_BOUND};
+		static final float[] GREEN_RGB = {0/RGB_UPPER_BOUND, 255/RGB_UPPER_BOUND, 0/RGB_UPPER_BOUND};
 
 		public static final float[] WHITE = {
 			WHITE_RGB[0],  WHITE_RGB[1],  WHITE_RGB[2],  1.0f,	// bottom left
 			WHITE_RGB[0],  WHITE_RGB[1],  WHITE_RGB[2],  1.0f,	// top left
 			WHITE_RGB[0],  WHITE_RGB[1],  WHITE_RGB[2],  1.0f,	// bottom right
 			WHITE_RGB[0],  WHITE_RGB[1],  WHITE_RGB[2],  1.0f,	// top right
+		};
+
+		public static final float[] GREEN = {
+				GREEN_RGB[0],  GREEN_RGB[1],  GREEN_RGB[2],  1.0f,
+				GREEN_RGB[0],  GREEN_RGB[1],  GREEN_RGB[2],  1.0f,
+				GREEN_RGB[0],  GREEN_RGB[1],  GREEN_RGB[2],  1.0f,
+				GREEN_RGB[0],  GREEN_RGB[1],  GREEN_RGB[2],  1.0f,
 		};
 
 	}

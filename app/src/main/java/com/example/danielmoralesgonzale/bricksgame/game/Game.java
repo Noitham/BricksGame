@@ -77,7 +77,7 @@ public class Game {
 		for (int i = 0; i < blocksX; i++) {
 			for (int j = 0; j < blocksY; j++) {
 
-					mBricks[i][j] = new Brick(Color.WHITE, newPosX, newPosY, Type.NORMAL);
+					mBricks[i][j] = new Brick(Color.GREEN, newPosX, newPosY, Type.NORMAL);
 
 				// The position of the next brick on the same line should be on the right side of the last brick
 				newPosX += mBricks[i][j].getSizeX() + Config.SPACE_BETWEEN_BRICKS;
@@ -251,11 +251,12 @@ public class Game {
 						if (mBall.getRightX() >= mBricks[i][j].getLeftX()
 								&& mBall.getLeftX() <= mBricks[i][j].getRightX())
 						{
-
 							/* Since the update happens so fast (on each draw frame) we can update the brick
 							 * state on the next frame. */
 							if (mBricks[i][j].getLives() == 0) {
 								mBricks[i][j] = null; // Deleting brick
+							}else {
+								decrementBrickLife(i, j);
 							}
 							return Collision.BRICK_BALL;
 						}
@@ -269,6 +270,11 @@ public class Game {
 		State.setGameOver(gameFinish);
 
 		return Collision.NOT_AVAILABLE;
+	}
+
+	private void decrementBrickLife(int i, int j) {
+		mBricks[i][j].decrementLives();
+			mBricks[i][j].setColor(Color.WHITE);
 	}
 
 
@@ -287,7 +293,6 @@ public class Game {
 		private static float sScreenLowerX;
 		private static boolean sGamePaused;
 		private static int sDifficult;
-		private static float sVolume;
 
 		public static void setScore (Score event) {
 			switch(event) {

@@ -1,5 +1,7 @@
 package com.example.danielmoralesgonzale.bricksgame.forms;
 
+import android.graphics.Color;
+
 public class Brick extends Shape {
 
 	public enum Type {
@@ -22,13 +24,16 @@ public class Brick extends Shape {
 		mType = type;
 		switch (type) {
 		case NORMAL:
-			mLives = 0;
+			mLives = 1;
 			break;
 		}
 				
 	}
 
-	
+	public void decrementLives() {
+		mLives--;
+	}
+
 	public int getLives() {
 		return mLives;
 	}
